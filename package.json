@@ -12,6 +12,7 @@
     "url": "git+https://github.com/saarnilauri/react-wp-rest-api-provider.git"
   },
   "keywords": [
+    "WordPress",
     "react",
     "rest",
     "api",
