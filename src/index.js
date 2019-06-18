@@ -69,7 +69,7 @@ export class RestApiRequest extends Component {
       : '';
 
     const uri = base + path + queryString;
-    if (cache && cache.cachedItems[uri]) {
+    if (cache.cachedItems[uri]) {
       const response = cache.cachedItems[uri];
       this.setState(() => ({
         headerEntries: response.headerEntries,
@@ -156,8 +156,8 @@ export class RestApiRequest extends Component {
 }
 
 RestApiRequest.contextTypes = {
-  path: PropTypes.string,
-  queryParams: PropTypes.object,
+  base: PropTypes.string,
+  cache: PropTypes.object,
 };
 
 export default RestApiProvider;
