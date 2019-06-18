@@ -1,6 +1,6 @@
 {
   "name": "react-wp-rest-api-provider",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React Component for WordPress Rest API using provider - consumer pattern.",
   "main": "index.js",
   "scripts": {
