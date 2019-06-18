@@ -1,5 +1,4 @@
 var path = require('path');
-const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.js'),
@@ -7,9 +6,11 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: 'index.js',
     library: '',
-    libraryTarget: 'commonjs',
+    libraryTarget: 'commonjs2',
   },
-  externals: [nodeExternals()],
+  externals: {
+    react: 'commonjs react', // this line is just to use the React dependency of our parent-testing-project instead of using our own React.
+  },
   module: {
     rules: [
       {
@@ -17,7 +18,11 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env', '@babel/react'],
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+          plugins: [
+            '@babel/plugin-proposal-object-rest-spread',
+            '@babel/plugin-transform-react-jsx',
+          ],
         },
       },
     ],
