@@ -2,7 +2,7 @@
   "name": "react-wp-rest-api-provider",
   "version": "0.0.2",
   "description": "React Component for WordPress Rest API using provider - consumer pattern.",
-  "main": "./dist/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
