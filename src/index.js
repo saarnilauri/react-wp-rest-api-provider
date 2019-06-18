@@ -69,7 +69,7 @@ export class RestApiRequest extends Component {
       : '';
 
     const uri = base + path + queryString;
-    if (cache.cachedItems[uri]) {
+    if (cache && cache.cachedItems[uri]) {
       const response = cache.cachedItems[uri];
       this.setState(() => ({
         headerEntries: response.headerEntries,
